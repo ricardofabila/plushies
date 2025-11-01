@@ -142,7 +142,7 @@ const DateRangeFilter: React.FC = () => {
                         <ChevronDown className="w-4 h-4 ml-2" />
                     </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="start" className="w-56">
+                <DropdownMenuContent align="start" className="w-56 bg-white border border-neutral-200 shadow-lg">
                     {presetOptions.map((option) => (
                         <DropdownMenuItem
                             key={option.value}
