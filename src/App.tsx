@@ -38,7 +38,7 @@ const AppContent = () => {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/plushies">
       <ToastProvider>
         <AppContent />
       </ToastProvider>
