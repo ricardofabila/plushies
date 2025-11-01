@@ -22,7 +22,7 @@ interface RevenueDistributionPieProps {
 }
 
 const RevenueDistributionPie: React.FC<RevenueDistributionPieProps> = ({ data, className = '' }) => {
-    const { isMobile, isTablet } = useResponsive();
+    const { isMobile } = useResponsive();
 
     // Color palette for stores
     const colors = [

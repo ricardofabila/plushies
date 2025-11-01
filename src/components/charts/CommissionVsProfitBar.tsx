@@ -24,7 +24,7 @@ interface CommissionVsProfitBarProps {
 }
 
 const CommissionVsProfitBar: React.FC<CommissionVsProfitBarProps> = ({ data, className = '' }) => {
-    const { isMobile, isTablet } = useResponsive();
+    const { isMobile } = useResponsive();
 
     const CustomTooltip = ({ active, payload, label }: any) => {
         if (active && payload && payload.length) {

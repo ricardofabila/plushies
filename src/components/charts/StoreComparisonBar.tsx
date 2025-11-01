@@ -24,7 +24,7 @@ interface StoreComparisonBarProps {
 }
 
 const StoreComparisonBar: React.FC<StoreComparisonBarProps> = ({ data, className = '' }) => {
-    const { isMobile, isTablet } = useResponsive();
+    const { isMobile } = useResponsive();
 
     // Color palette for stores
     const colors = [

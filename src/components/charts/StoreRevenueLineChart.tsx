@@ -25,7 +25,7 @@ interface StoreRevenueLineChartProps {
 }
 
 const StoreRevenueLineChart: React.FC<StoreRevenueLineChartProps> = ({ data, className = '' }) => {
-    const { isMobile, isTablet } = useResponsive();
+    const { isMobile } = useResponsive();
 
     const CustomTooltip = ({ active, payload, label }: any) => {
         if (active && payload && payload.length) {
