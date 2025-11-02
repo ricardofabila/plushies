@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import AppHeader from '@/components/navigation/AppHeader';
 import StoreTabs from '@/components/navigation/StoreTabs';
 import ToastContainer from '@/components/ui/Toast';
@@ -38,7 +38,7 @@ const AppContent = () => {
 
 function App() {
   return (
-    <Router basename="/plushies">
+    <Router>
       <ToastProvider>
         <AppContent />
       </ToastProvider>
