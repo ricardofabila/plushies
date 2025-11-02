@@ -91,7 +91,7 @@ const StoreDetail: React.FC = () => {
                 <Card className="shadow-soft hover:shadow-cozy transition-shadow duration-200 bg-white">
                     <CardHeader>
                         <CardTitle className="text-lg font-semibold text-primary-800 flex items-center space-x-2">
-                            <TrendingUp className="h-5 w-5 text-cute-pink" />
+                            <TrendingUp className="h-5 w-5 text-primary-500" />
                             <span>Tendencias de Ingresos</span>
                         </CardTitle>
                     </CardHeader>
@@ -103,7 +103,7 @@ const StoreDetail: React.FC = () => {
                 <Card className="shadow-soft hover:shadow-cozy transition-shadow duration-200 bg-white">
                     <CardHeader>
                         <CardTitle className="text-lg font-semibold text-primary-800 flex items-center space-x-2">
-                            <Percent className="h-5 w-5 text-cute-pink" />
+                            <Percent className="h-5 w-5 text-primary-500" />
                             <span>Comisión vs Ganancia</span>
                         </CardTitle>
                     </CardHeader>

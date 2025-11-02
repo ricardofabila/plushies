@@ -149,7 +149,7 @@ const Settings: React.FC = () => {
         <div className="space-y-6">
             <div className="flex items-center justify-between">
                 <h1 className="text-3xl font-bold text-primary-800 flex items-center space-x-3">
-                    <SettingsIcon className="h-8 w-8 text-cute-pink" />
+                    <SettingsIcon className="h-8 w-8 text-primary-500" />
                     <span>Configuración</span>
                 </h1>
             </div>
@@ -158,7 +158,7 @@ const Settings: React.FC = () => {
             <Card className="shadow-soft hover:shadow-cozy transition-shadow duration-200 bg-white">
                 <CardHeader>
                     <CardTitle className="text-lg font-semibold text-primary-800 flex items-center space-x-2">
-                        <Percent className="h-5 w-5 text-cute-pink" />
+                        <Percent className="h-5 w-5 text-primary-500" />
                         <span>Configuración por Defecto</span>
                     </CardTitle>
                 </CardHeader>
@@ -195,7 +195,7 @@ const Settings: React.FC = () => {
             <Card className="shadow-soft hover:shadow-cozy transition-shadow duration-200 bg-white">
                 <CardHeader>
                     <CardTitle className="text-lg font-semibold text-primary-800 flex items-center space-x-2">
-                        <Download className="h-5 w-5 text-cute-pink" />
+                        <Download className="h-5 w-5 text-primary-500" />
                         <span>Gestión de Datos</span>
                     </CardTitle>
                 </CardHeader>
@@ -227,7 +227,7 @@ const Settings: React.FC = () => {
                             </p>
                             <Button
                                 onClick={handleExportJSON}
-                                className="w-full bg-cute-pink hover:bg-warm-coral text-white"
+                                className="w-full bg-primary-500 hover:bg-primary-600 text-white"
                             >
                                 <Download className="h-4 w-4 mr-2" />
                                 Descargar Respaldo JSON
@@ -244,7 +244,7 @@ const Settings: React.FC = () => {
                                 onClick={handleFileSelect}
                                 disabled={isImporting}
                                 variant="outline"
-                                className="w-full border-cute-pink text-cute-pink hover:bg-cute-pink hover:text-white"
+                                className="w-full border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white"
                             >
                                 <Upload className="h-4 w-4 mr-2" />
                                 {isImporting ? 'Procesando...' : 'Seleccionar Archivo JSON'}

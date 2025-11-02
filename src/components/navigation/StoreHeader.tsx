@@ -39,8 +39,8 @@ const StoreHeader: React.FC<StoreHeaderProps> = ({ store, bestDay, worstDay }) =
             {/* Store Title and Basic Info */}
             <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                    <div className="p-3 bg-cute-pink/20 rounded-xl">
-                        <StoreIcon className="h-8 w-8 text-cute-pink" />
+                    <div className="p-3 bg-primary-500/20 rounded-xl">
+                        <StoreIcon className="h-8 w-8 text-primary-500" />
                     </div>
                     <div>
                         <h1 className="text-3xl font-bold text-primary-800">
@@ -58,7 +58,7 @@ const StoreHeader: React.FC<StoreHeaderProps> = ({ store, bestDay, worstDay }) =
                     onClick={handleExportCSV}
                     variant="outline"
                     size="sm"
-                    className="flex items-center space-x-2 border-cute-pink text-cute-pink hover:bg-cute-pink hover:text-white transition-colors"
+                    className="flex items-center space-x-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white transition-colors"
                 >
                     <Download className="h-4 w-4" />
                     <span>Exportar CSV</span>
