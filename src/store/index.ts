@@ -15,6 +15,7 @@ import {
 import {
     saveToStorage,
     loadFromStorage,
+    fetchRemoteData,
     getStorageInfo,
     StorageError,
     StorageQuotaError,
@@ -91,16 +92,22 @@ const defaultUIState: UIState = {
     selectedDateRange: getDateRangeFromPreset('este-mes'),
     selectedDateRangePreset: 'este-mes',
     activeStoreId: null,
-    isLoading: false,
+    isLoading: true, // Start with loading true to show loading screen
 };
 
 /**
- * Initialize store with data from LocalStorage
+ * Remote data source URL
  */
-const initializeStore = (): Partial<AppStore> => {
+const REMOTE_DATA_URL = 'https://raw.githubusercontent.com/ricardofabila/plushies/refs/heads/main/data.json';
+
+/**
+ * Initialize store with data from LocalStorage synchronously
+ */
+const initializeStoreSync = (): Partial<AppStore> => {
     try {
         const savedData = loadFromStorage();
         if (savedData) {
+            console.log('Loaded data from localStorage');
             return {
                 stores: savedData.stores,
                 userSettings: savedData.userSettings,
@@ -111,15 +118,42 @@ const initializeStore = (): Partial<AppStore> => {
             };
         }
     } catch (error) {
-        console.error('Failed to load data from storage:', error);
-        // Continue with default state
+        console.error('Failed to load data from localStorage:', error);
     }
 
+    // Return default state
+    console.log('Using default empty state');
     return {
         stores: [],
         userSettings: defaultUserSettings,
         ui: defaultUIState,
     };
+};
+
+/**
+ * Load data from remote source first, then fallback to localStorage
+ */
+const loadInitialData = async (): Promise<Partial<AppStore>> => {
+    try {
+        // Try to fetch from remote source first
+        const remoteData = await fetchRemoteData(REMOTE_DATA_URL);
+        if (remoteData) {
+            console.log('Loaded data from remote source');
+            return {
+                stores: remoteData.stores,
+                userSettings: remoteData.userSettings,
+                ui: {
+                    ...defaultUIState,
+                    activeStoreId: remoteData.stores.length > 0 ? remoteData.stores[0].id : null,
+                },
+            };
+        }
+    } catch (error) {
+        console.warn('Failed to load data from remote source, using localStorage:', error);
+    }
+
+    // Fallback to localStorage (already loaded in sync initialization)
+    return initializeStoreSync();
 };
 
 /**
@@ -152,7 +186,7 @@ const persistState = (state: AppStore): void => {
  */
 export const useAppStore = create<AppStore>()(
     subscribeWithSelector((set, get) => {
-        const initialState = initializeStore();
+        const initialState = initializeStoreSync();
 
         return {
             // Initial state
@@ -445,3 +479,36 @@ export const useClearAllData = () => useAppStore((state) => state.clearAllData);
 export const useUpdateUserSettings = () => useAppStore((state) => state.updateUserSettings);
 export const useGetStorageInfo = () => useAppStore((state) => state.getStorageInfo);
 export const useHandleStorageError = () => useAppStore((state) => state.handleStorageError);
+
+/**
+ * Initialize remote data loading
+ * This runs after the store is created to load data from remote source
+ */
+loadInitialData().then((data) => {
+    if (data.stores && data.stores.length > 0) {
+        useAppStore.setState({
+            stores: data.stores,
+            userSettings: data.userSettings || defaultUserSettings,
+            ui: {
+                ...useAppStore.getState().ui,
+                activeStoreId: data.stores[0].id,
+                isLoading: false,
+            },
+        });
+    } else {
+        useAppStore.setState((state) => ({
+            ui: {
+                ...state.ui,
+                isLoading: false,
+            },
+        }));
+    }
+}).catch((error) => {
+    console.error('Failed to load initial data:', error);
+    useAppStore.setState((state) => ({
+        ui: {
+            ...state.ui,
+            isLoading: false,
+        },
+    }));
+});

@@ -2,13 +2,21 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import AppHeader from '@/components/navigation/AppHeader';
 import StoreTabs from '@/components/navigation/StoreTabs';
 import ToastContainer from '@/components/ui/Toast';
+import LoadingScreen from '@/components/ui/LoadingScreen';
 import Dashboard from '@/pages/Dashboard';
 import StoreDetail from '@/pages/StoreDetail';
 import Settings from '@/pages/Settings';
 import { ToastProvider, useToast } from '@/contexts/ToastContext';
+import { useIsLoading } from '@/store';
 
 const AppContent = () => {
   const { toasts, removeToast } = useToast();
+  const isLoading = useIsLoading();
+
+  // Show loading screen while fetching initial data
+  if (isLoading) {
+    return <LoadingScreen message="Cargando datos desde el servidor..." />;
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50">

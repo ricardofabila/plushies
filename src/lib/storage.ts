@@ -226,6 +226,30 @@ const readFromStorage = (): AppStateV1 | null => {
 };
 
 /**
+ * Fetch data from remote JSON URL
+ */
+export const fetchRemoteData = async (url: string): Promise<AppStateV1 | null> => {
+    try {
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        if (!validateAppState(data)) {
+            throw new StorageValidationError('Invalid data structure from remote source');
+        }
+        
+        return data;
+    } catch (error) {
+        console.error('Failed to fetch remote data:', error);
+        return null;
+    }
+};
+
+/**
  * Public API
  */
 
