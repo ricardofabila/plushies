@@ -1,0 +1,223 @@
+{
+  "version": 1,
+  "currency": "MXN",
+  "stores": [
+    {
+      "name": "Delator",
+      "commissionPercent": 20,
+      "id": "4c622d34-685c-42fd-b3e7-60ed050117c9",
+      "entries": [
+        {
+          "date": "19/10/2025",
+          "recaudado": 600,
+          "costoPeluches": 350,
+          "id": "5eb10820-fa7c-4197-91b7-6249af3e7969"
+        },
+        {
+          "date": "21/10/2025",
+          "recaudado": 850,
+          "costoPeluches": 350,
+          "id": "0cc6a047-47ef-41d5-9dff-22dbd0f2c158"
+        },
+        {
+          "date": "25/10/2025",
+          "recaudado": 690,
+          "costoPeluches": 400,
+          "id": "f38c4f7f-3275-464e-b8b2-7b0d01afdefa"
+        },
+        {
+          "date": "29/10/2025",
+          "recaudado": 810,
+          "costoPeluches": 800,
+          "id": "5cb22f33-7dd3-46df-9fcf-dcd3b4174b10"
+        },
+        {
+          "date": "01/11/2025",
+          "recaudado": 570,
+          "costoPeluches": 400,
+          "id": "ad8b7185-ba7f-4a61-8c35-fb2f7886631b"
+        },
+        {
+          "date": "05/11/2025",
+          "recaudado": 445,
+          "costoPeluches": 200,
+          "id": "544c88b7-a07c-4d05-bb60-e6fbe6b2499d"
+        },
+        {
+          "date": "11/11/2025",
+          "recaudado": 670,
+          "costoPeluches": 150,
+          "id": "cd069ce2-bfdb-415c-aaaf-c6f4f2f5270e"
+        },
+        {
+          "date": "16/11/2025",
+          "recaudado": 600,
+          "costoPeluches": 350,
+          "id": "665b266b-ecf0-49a3-b1c3-abefd23ba1ab"
+        },
+        {
+          "date": "22/11/2025",
+          "recaudado": 550,
+          "costoPeluches": 300,
+          "id": "1d7a7f41-6d3c-4359-ba5c-a5429a63d0eb"
+        },
+        {
+          "date": "26/11/2025",
+          "recaudado": 940,
+          "costoPeluches": 250,
+          "id": "865aeb67-828a-4cb8-87f3-f4545fa7e34c"
+        },
+        {
+          "date": "02/12/2025",
+          "recaudado": 230,
+          "costoPeluches": 100,
+          "id": "9c7b9443-bc98-4e2e-a23a-64494564bc99"
+        },
+        {
+          "date": "05/12/2025",
+          "recaudado": 130,
+          "costoPeluches": 100,
+          "id": "e731ed2c-79aa-4322-b8f7-daa73decdec8"
+        },
+        {
+          "date": "07/12/2025",
+          "recaudado": 250,
+          "costoPeluches": 100,
+          "id": "4f4385f9-f173-4154-9fd2-a7cb682b6293"
+        },
+        {
+          "date": "18/12/2025",
+          "recaudado": 370,
+          "costoPeluches": 150,
+          "id": "d7dc4e43-2e5e-4aa4-87f5-f5a24e76f9c9"
+        },
+        {
+          "date": "08/01/2026",
+          "recaudado": 1010,
+          "costoPeluches": 350,
+          "id": "2b34723c-e83a-4579-ae24-95a9f8539612"
+        },
+        {
+          "date": "20/01/2026",
+          "recaudado": 355,
+          "costoPeluches": 70,
+          "id": "d4f62134-ac59-4ef4-b3d6-5d72b73b5994"
+        },
+        {
+          "date": "30/01/2026",
+          "recaudado": 830,
+          "costoPeluches": 275,
+          "id": "b4799d47-7ea8-4026-89d3-96b7d3b26682"
+        }
+      ]
+    },
+    {
+      "name": "XG",
+      "commissionPercent": 20,
+      "id": "b348f679-e31f-4bf9-8204-8c681db16109",
+      "entries": [
+        {
+          "date": "05/11/2025",
+          "recaudado": 620,
+          "costoPeluches": 200,
+          "id": "5fb57e8a-5e76-446d-9cf8-5231a66eaaba"
+        },
+        {
+          "date": "12/11/2025",
+          "recaudado": 230,
+          "costoPeluches": 50,
+          "id": "d36e23b8-950e-471e-b544-3b2123e76d53"
+        },
+        {
+          "date": "19/11/2025",
+          "recaudado": 735,
+          "costoPeluches": 300,
+          "id": "4de5bd4a-306c-4272-bdb6-764ad73b44ec"
+        },
+        {
+          "date": "28/11/2025",
+          "recaudado": 220,
+          "costoPeluches": 150,
+          "id": "92dce945-c2ea-4de4-95c7-1dafbce8fef9"
+        },
+        {
+          "date": "28/11/2025",
+          "recaudado": 270,
+          "costoPeluches": 0,
+          "id": "a6d9db14-7b57-4744-97a0-59a12b27eff7"
+        },
+        {
+          "date": "25/11/2025",
+          "recaudado": 250,
+          "costoPeluches": 100,
+          "id": "8c9a3f00-63d2-431b-85f2-24a9667c9b3c"
+        }
+      ]
+    },
+    {
+      "name": "Time Vault",
+      "commissionPercent": 20,
+      "id": "71ddf280-e125-4bc4-86b1-b8fae99ccbee",
+      "entries": [
+        {
+          "date": "05/12/2025",
+          "recaudado": 860,
+          "costoPeluches": 300,
+          "id": "7803a517-a68a-4054-ad11-356072c92287"
+        },
+        {
+          "date": "05/12/2025",
+          "recaudado": 770,
+          "costoPeluches": 50,
+          "id": "9a91b246-6c4c-4c89-b1e7-1a20468abeb5"
+        },
+        {
+          "date": "07/12/2025",
+          "recaudado": 480,
+          "costoPeluches": 200,
+          "id": "920024c4-bd9a-4b0b-825f-19d3e98a7c4b"
+        },
+        {
+          "date": "18/12/2025",
+          "recaudado": 560,
+          "costoPeluches": 150,
+          "id": "5b2067ed-22c5-4eac-86c4-d6d7ce22e3d0"
+        },
+        {
+          "date": "23/12/2025",
+          "recaudado": 480,
+          "costoPeluches": 300,
+          "id": "bcbff88d-b6be-469b-8c3f-20f0351a34e1"
+        },
+        {
+          "date": "05/01/2026",
+          "recaudado": 400,
+          "costoPeluches": 150,
+          "id": "6048cd05-3f81-4b2a-9ee0-7ca3a320f6c1"
+        },
+        {
+          "date": "11/01/2026",
+          "recaudado": 350,
+          "costoPeluches": 100,
+          "id": "2780f63c-57e3-4c24-8d6c-983a76fe99b9"
+        },
+        {
+          "date": "18/01/2026",
+          "recaudado": 540,
+          "costoPeluches": 0,
+          "id": "c109201b-fc7f-4bbf-a675-16e46f68395b"
+        },
+        {
+          "date": "30/01/2026",
+          "recaudado": 840,
+          "costoPeluches": 240,
+          "id": "86aa1863-0cdd-40b3-a288-48e298d5d406"
+        }
+      ]
+    }
+  ],
+  "userSettings": {
+    "defaultCommissionPercent": 20,
+    "dateLocale": "es-MX"
+  }
+}
