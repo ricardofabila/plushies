@@ -114,6 +114,35 @@ export const isValidDateFormat = (dateString: string): boolean => {
 };
 
 /**
+ * Convert date from DD/MM/YYYY to YYYY-MM-DD format (for HTML5 date inputs)
+ * @param dateString - Date string in DD/MM/YYYY format
+ * @returns Date string in YYYY-MM-DD format
+ */
+export const convertToInputDate = (dateString: string): string => {
+    try {
+        const date = parseDate(dateString);
+        return format(date, 'yyyy-MM-dd');
+    } catch {
+        // If parsing fails, return today's date in input format
+        return format(new Date(), 'yyyy-MM-dd');
+    }
+};
+
+/**
+ * Convert date from YYYY-MM-DD to DD/MM/YYYY format (from HTML5 date inputs)
+ * @param inputDate - Date string in YYYY-MM-DD format
+ * @returns Date string in DD/MM/YYYY format
+ */
+export const convertFromInputDate = (inputDate: string): string => {
+    try {
+        const date = parse(inputDate, 'yyyy-MM-dd', new Date());
+        return format(date, 'dd/MM/yyyy', { locale: es });
+    } catch {
+        return inputDate;
+    }
+};
+
+/**
  * Currency formatting utilities for MXN
  */
 

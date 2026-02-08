@@ -12,12 +12,13 @@ import { validateEntry } from '@/lib/validation';
 import {
     calculateEntryMetrics,
     formatCurrency,
-    formatDate
+    formatDate,
+    convertToInputDate,
+    convertFromInputDate
 } from '@/utils';
 import type { Entry } from '@/types';
 import {
     X,
-    Calendar,
     DollarSign,
     Package,
     FileText,
@@ -83,17 +84,17 @@ const EntryModal: React.FC<EntryModalProps> = ({
     useEffect(() => {
         if (isOpen) {
             if (entry) {
-                // Editing existing entry
+                // Editing existing entry - convert DD/MM/YYYY to YYYY-MM-DD for input
                 setFormData({
-                    date: entry.date,
+                    date: convertToInputDate(entry.date),
                     recaudado: entry.recaudado.toString(),
                     costoPeluches: entry.costoPeluches.toString(),
                     notes: entry.notes || '',
                 });
             } else {
-                // Adding new entry
+                // Adding new entry - use today's date in YYYY-MM-DD format
                 setFormData({
-                    date: formatDate(new Date()),
+                    date: convertToInputDate(formatDate(new Date())),
                     recaudado: '',
                     costoPeluches: '',
                     notes: '',
@@ -120,21 +121,24 @@ const EntryModal: React.FC<EntryModalProps> = ({
 
         if (!store) return null;
 
+        // Convert YYYY-MM-DD to DD/MM/YYYY for calculations
+        const dateInAppFormat = convertFromInputDate(formData.date);
+
         return calculateEntryMetrics(
             {
                 id: '',
-                date: formData.date,
+                date: dateInAppFormat,
                 recaudado,
                 costoPeluches,
                 notes: formData.notes
             },
             store.commissionPercent
         );
-    }, [formData.recaudado, formData.costoPeluches, store]);
+    }, [formData.recaudado, formData.costoPeluches, formData.date, store]);
 
     const handleClose = () => {
         setFormData({
-            date: formatDate(new Date()),
+            date: convertToInputDate(formatDate(new Date())),
             recaudado: '',
             costoPeluches: '',
             notes: '',
@@ -153,9 +157,12 @@ const EntryModal: React.FC<EntryModalProps> = ({
     if (!isOpen || !store) return null;
 
     const validateForm = (): boolean => {
+        // Convert YYYY-MM-DD back to DD/MM/YYYY for validation
+        const dateInAppFormat = convertFromInputDate(formData.date);
+
         // Use the comprehensive validation system
         const entryValidation = validateEntry({
-            date: formData.date,
+            date: dateInAppFormat,
             recaudado: formData.recaudado,
             costoPeluches: formData.costoPeluches,
             notes: formData.notes
@@ -192,8 +199,11 @@ const EntryModal: React.FC<EntryModalProps> = ({
         }
 
         try {
+            // Convert YYYY-MM-DD back to DD/MM/YYYY for storage
+            const dateInAppFormat = convertFromInputDate(formData.date);
+
             const entryData = {
-                date: formData.date.trim(),
+                date: dateInAppFormat,
                 recaudado: parseFloat(formData.recaudado),
                 costoPeluches: parseFloat(formData.costoPeluches),
                 notes: formData.notes.trim() || undefined,
@@ -203,13 +213,13 @@ const EntryModal: React.FC<EntryModalProps> = ({
                 updateEntry(storeId, entry.id, entryData);
                 success(
                     '¡Entrada actualizada!',
-                    `La entrada del ${formData.date} ha sido actualizada exitosamente.`
+                    `La entrada del ${dateInAppFormat} ha sido actualizada exitosamente.`
                 );
             } else {
                 addEntry(storeId, entryData);
                 success(
                     '¡Entrada agregada!',
-                    `La entrada del ${formData.date} ha sido agregada exitosamente.`
+                    `La entrada del ${dateInAppFormat} ha sido agregada exitosamente.`
                 );
             }
 
@@ -292,20 +302,16 @@ const EntryModal: React.FC<EntryModalProps> = ({
                                 <Label htmlFor="date" className="text-sm font-medium text-neutral-700">
                                     Fecha
                                 </Label>
-                                <div className="relative">
-                                    <Input
-                                        id="date"
-                                        type="text"
-                                        placeholder="DD/MM/YYYY"
-                                        value={formData.date}
-                                        onChange={(e) => handleInputChange('date', e.target.value)}
-                                        className={`pl-10 text-base sm:text-sm min-h-[44px] sm:min-h-[36px] ${validation.getFieldClasses('date', errors.date ? 'border-error-500 focus:border-error-500' : '')}`}
-                                        aria-describedby={validation.shouldShowFieldError('date') ? 'date-error' : undefined}
-                                        aria-invalid={validation.shouldShowFieldError('date')}
-                                        required
-                                    />
-                                    <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-neutral-400" aria-hidden="true" />
-                                </div>
+                                <Input
+                                    id="date"
+                                    type="date"
+                                    value={formData.date}
+                                    onChange={(e) => handleInputChange('date', e.target.value)}
+                                    className={`text-base sm:text-sm min-h-[44px] sm:min-h-[36px] ${validation.getFieldClasses('date', errors.date ? 'border-error-500 focus:border-error-500' : '')}`}
+                                    aria-describedby={validation.shouldShowFieldError('date') ? 'date-error' : undefined}
+                                    aria-invalid={validation.shouldShowFieldError('date')}
+                                    required
+                                />
                                 <ValidationError
                                     error={validation.getFieldError('date') || errors.date}
                                     id="date-error"
