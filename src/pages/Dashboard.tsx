@@ -8,12 +8,34 @@ import {
     prepareRevenueDistributionData,
     prepareStoresSummaryData
 } from '@/utils';
+import {
+    analyzeDayOfWeekPerformance,
+    calculateMonthOverMonthGrowth,
+    calculateWeekOverWeekGrowth,
+    calculateYearOverYearGrowth,
+    calculateMovingAverages,
+    calculateStoreROI,
+    calculateStoreEfficiencyScores,
+    calculateCashFlowTimeline,
+    calculateStoreBenchmarks,
+    generateEntryFrequencyHeatmap,
+    findPeakSalesDays
+} from '@/utils/analytics';
 import KPICard from '@/components/ui/KPICard';
 import DateRangeFilter from '@/components/ui/DateRangeFilter';
+import GrowthMetricCard from '@/components/ui/GrowthMetricCard';
+import PeakSalesDays from '@/components/ui/PeakSalesDays';
 import RevenueLineChart from '@/components/charts/RevenueLineChart';
 import StoreComparisonBar from '@/components/charts/StoreComparisonBar';
 import RevenueDistributionPie from '@/components/charts/RevenueDistributionPie';
+import DayOfWeekChart from '@/components/charts/DayOfWeekChart';
+import MovingAverageChart from '@/components/charts/MovingAverageChart';
+import CashFlowChart from '@/components/charts/CashFlowChart';
+import EntryFrequencyHeatmap from '@/components/charts/EntryFrequencyHeatmap';
 import StoresSummaryTable from '@/components/tables/StoresSummaryTable';
+import StoreEfficiencyTable from '@/components/tables/StoreEfficiencyTable';
+import StoreBenchmarkTable from '@/components/tables/StoreBenchmarkTable';
+import StoreROITable from '@/components/tables/StoreROITable';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { DollarSign, TrendingUp, Percent, PiggyBank } from 'lucide-react';
 
@@ -29,6 +51,19 @@ const Dashboard: React.FC = () => {
     const barChartData = prepareStoreComparisonData(stores, dateRange);
     const pieChartData = prepareRevenueDistributionData(stores, dateRange);
     const summaryData = prepareStoresSummaryData(stores, dateRange);
+
+    // Advanced analytics
+    const dayOfWeekData = analyzeDayOfWeekPerformance(stores, dateRange);
+    const peakSalesDays = findPeakSalesDays(stores, dateRange, 5);
+    const momGrowth = calculateMonthOverMonthGrowth(stores);
+    const wowGrowth = calculateWeekOverWeekGrowth(stores);
+    const yoyGrowth = calculateYearOverYearGrowth(stores);
+    const movingAverages = calculateMovingAverages(stores, dateRange);
+    const storeROIs = stores.map(store => calculateStoreROI(store, dateRange));
+    const efficiencyScores = calculateStoreEfficiencyScores(stores, dateRange);
+    const cashFlowData = calculateCashFlowTimeline(stores, dateRange);
+    const benchmarks = calculateStoreBenchmarks(stores, dateRange);
+    const heatmapData = generateEntryFrequencyHeatmap(stores, dateRange);
 
     // Show welcome message if no stores exist
     if (stores.length === 0) {
@@ -101,6 +136,50 @@ const Dashboard: React.FC = () => {
             {/* Charts Section */}
             {kpis.entryCount > 0 ? (
                 <div className="space-y-6">
+                    {/* Growth Metrics */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <GrowthMetricCard metrics={momGrowth} />
+                        <GrowthMetricCard metrics={wowGrowth} />
+                        <GrowthMetricCard metrics={yoyGrowth} />
+                    </div>
+
+                    {/* Peak Sales Days and Day of Week Performance */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <Card className="shadow-soft bg-white">
+                            <CardHeader>
+                                <CardTitle className="flex items-center gap-2">
+                                    🏆 Días con Mejores Ventas
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <PeakSalesDays data={peakSalesDays} />
+                            </CardContent>
+                        </Card>
+
+                        <Card className="shadow-soft bg-white">
+                            <CardHeader>
+                                <CardTitle className="flex items-center gap-2">
+                                    📅 Rendimiento por Día de la Semana
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <DayOfWeekChart data={dayOfWeekData} />
+                            </CardContent>
+                        </Card>
+                    </div>
+
+                    {/* Moving Averages */}
+                    <Card className="shadow-soft bg-white">
+                        <CardHeader>
+                            <CardTitle className="flex items-center gap-2">
+                                📊 Promedios Móviles (7 y 30 días)
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <MovingAverageChart data={movingAverages} />
+                        </CardContent>
+                    </Card>
+
                     {/* Revenue Trends Line Chart */}
                     <Card className="shadow-soft bg-white">
                         <CardHeader>
@@ -110,6 +189,66 @@ const Dashboard: React.FC = () => {
                         </CardHeader>
                         <CardContent>
                             <RevenueLineChart data={lineChartData} />
+                        </CardContent>
+                    </Card>
+
+                    {/* Cash Flow Timeline */}
+                    <Card className="shadow-soft bg-white">
+                        <CardHeader>
+                            <CardTitle className="flex items-center gap-2">
+                                💰 Flujo de Efectivo Acumulado
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <CashFlowChart data={cashFlowData} />
+                        </CardContent>
+                    </Card>
+
+                    {/* Store Efficiency Scores */}
+                    <Card className="shadow-soft bg-white">
+                        <CardHeader>
+                            <CardTitle className="flex items-center gap-2">
+                                🎯 Ranking de Eficiencia por Tienda
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <StoreEfficiencyTable data={efficiencyScores} />
+                        </CardContent>
+                    </Card>
+
+                    {/* Store ROI Analysis */}
+                    <Card className="shadow-soft bg-white">
+                        <CardHeader>
+                            <CardTitle className="flex items-center gap-2">
+                                📊 ROI por Tienda
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <StoreROITable data={storeROIs} />
+                        </CardContent>
+                    </Card>
+
+                    {/* Store Benchmarking */}
+                    <Card className="shadow-soft bg-white">
+                        <CardHeader>
+                            <CardTitle className="flex items-center gap-2">
+                                📊 Comparación entre Tiendas
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <StoreBenchmarkTable data={benchmarks} />
+                        </CardContent>
+                    </Card>
+
+                    {/* Entry Frequency Heatmap */}
+                    <Card className="shadow-soft bg-white">
+                        <CardHeader>
+                            <CardTitle className="flex items-center gap-2">
+                                🗓️ Calendario de Frecuencia de Entradas
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <EntryFrequencyHeatmap data={heatmapData} dateRange={dateRange} />
                         </CardContent>
                     </Card>
 
