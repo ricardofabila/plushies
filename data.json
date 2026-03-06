@@ -126,49 +126,12 @@
           "recaudado": 130,
           "costoPeluches": 0,
           "id": "ceecd9e3-b503-4ca9-bb41-1919dbdc30a8"
-        }
-      ]
-    },
-    {
-      "name": "XG",
-      "commissionPercent": 20,
-      "id": "b348f679-e31f-4bf9-8204-8c681db16109",
-      "entries": [
-        {
-          "date": "05/11/2025",
-          "recaudado": 620,
-          "costoPeluches": 200,
-          "id": "5fb57e8a-5e76-446d-9cf8-5231a66eaaba"
         },
         {
-          "date": "12/11/2025",
-          "recaudado": 230,
-          "costoPeluches": 50,
-          "id": "d36e23b8-950e-471e-b544-3b2123e76d53"
-        },
-        {
-          "date": "19/11/2025",
-          "recaudado": 735,
-          "costoPeluches": 300,
-          "id": "4de5bd4a-306c-4272-bdb6-764ad73b44ec"
-        },
-        {
-          "date": "28/11/2025",
-          "recaudado": 220,
-          "costoPeluches": 150,
-          "id": "92dce945-c2ea-4de4-95c7-1dafbce8fef9"
-        },
-        {
-          "date": "28/11/2025",
-          "recaudado": 270,
-          "costoPeluches": 0,
-          "id": "a6d9db14-7b57-4744-97a0-59a12b27eff7"
-        },
-        {
-          "date": "25/11/2025",
-          "recaudado": 250,
-          "costoPeluches": 100,
-          "id": "8c9a3f00-63d2-431b-85f2-24a9667c9b3c"
+          "date": "01/03/2026",
+          "recaudado": 290,
+          "costoPeluches": 70,
+          "id": "36676ac5-a305-4aa4-afad-e26446614a77"
         }
       ]
     },
@@ -248,6 +211,12 @@
           "recaudado": 485,
           "costoPeluches": 70,
           "id": "104d4a48-4033-4422-bfbc-bbc846163001"
+        },
+        {
+          "date": "01/03/2026",
+          "recaudado": 670,
+          "costoPeluches": 70,
+          "id": "1ea1103e-3d92-413e-aaa2-8225891f0801"
         }
       ]
     }
