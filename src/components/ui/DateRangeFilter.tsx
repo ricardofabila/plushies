@@ -34,6 +34,7 @@ const DateRangeFilter: React.FC = () => {
         { value: 'este-mes', label: 'Este mes' },
         { value: 'ultimos-30-dias', label: 'Últimos 30 días' },
         { value: 'ano-actual', label: 'Año actual' },
+        { value: 'all-time', label: 'Todo el tiempo' },
         { value: 'custom', label: 'Rango personalizado' },
     ];
 

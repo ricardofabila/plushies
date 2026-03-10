@@ -202,6 +202,11 @@ export const getDateRangeFromPreset = (
                 start: startOfYear(now),
                 end: endOfYear(now),
             };
+        case 'all-time':
+            return {
+                start: new Date(1970, 0, 1), // January 1, 1970
+                end: endOfDay(now),
+            };
         case 'custom':
             if (!customRange) {
                 throw new Error('Custom range required when preset is "custom"');

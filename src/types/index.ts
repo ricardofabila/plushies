@@ -104,7 +104,7 @@ export interface StoreSummary {
 /**
  * Date range preset options
  */
-export type DateRangePreset = 'este-mes' | 'ultimos-30-dias' | 'ano-actual' | 'custom';
+export type DateRangePreset = 'este-mes' | 'ultimos-30-dias' | 'ano-actual' | 'all-time' | 'custom';
 
 /**
  * Sort options for tables
