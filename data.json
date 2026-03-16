@@ -132,6 +132,12 @@
           "recaudado": 290,
           "costoPeluches": 70,
           "id": "36676ac5-a305-4aa4-afad-e26446614a77"
+        },
+        {
+          "date": "16/03/2026",
+          "recaudado": 200,
+          "costoPeluches": 0,
+          "id": "dc8187aa-1d12-4056-8f37-85450faf3a18"
         }
       ]
     },
@@ -223,6 +229,12 @@
           "recaudado": 500,
           "costoPeluches": 150,
           "id": "a997d52f-2a33-435d-a73c-c4c634660b3e"
+        },
+        {
+          "date": "16/03/2026",
+          "recaudado": 300,
+          "costoPeluches": 70,
+          "id": "b6bcff56-24de-429d-b1ca-1f1e2e3a1af1"
         }
       ]
     }
