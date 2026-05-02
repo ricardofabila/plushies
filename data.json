@@ -20,6 +20,28 @@
           "id": "0cc6a047-47ef-41d5-9dff-22dbd0f2c158"
         },
         {
+ {
+  "version": 1,
+  "currency": "MXN",
+  "stores": [
+    {
+      "name": "Delator",
+      "commissionPercent": 20,
+      "id": "4c622d34-685c-42fd-b3e7-60ed050117c9",
+      "entries": [
+        {
+          "date": "19/10/2025",
+          "recaudado": 600,
+          "costoPeluches": 350,
+          "id": "5eb10820-fa7c-4197-91b7-6249af3e7969"
+        },
+        {
+          "date": "21/10/2025",
+          "recaudado": 850,
+          "costoPeluches": 350,
+          "id": "0cc6a047-47ef-41d5-9dff-22dbd0f2c158"
+        },
+        {
           "date": "25/10/2025",
           "recaudado": 690,
           "costoPeluches": 400,
@@ -144,6 +166,12 @@
           "recaudado": 505,
           "costoPeluches": 300,
           "id": "3662e997-6b0d-4ce4-94c0-db6103c907b7"
+        },
+        {
+          "date": "15/04/2026",
+          "recaudado": 260,
+          "costoPeluches": 50,
+          "id": "9ff70383-1d8d-45a8-a61a-bec3f73d4e83"
         }
       ]
     },
@@ -247,6 +275,259 @@
           "recaudado": 1030,
           "costoPeluches": 420,
           "id": "74044116-14b2-4a51-8e03-1ab07a8bd6e5"
+        },
+        {
+          "date": "15/04/2026",
+          "recaudado": 430,
+          "costoPeluches": 70,
+          "id": "20f515a0-d343-4b01-88a3-500d261599e3"
+        }
+      ]
+    }
+  ],
+  "userSettings": {
+    "defaultCommissionPercent": 20,
+    "dateLocale": "es-MX"
+  }
+}         "date": "25/10/2025",
+          "recaudado": 690,
+          "costoPeluches": 400,
+          "id": "f38c4f7f-3275-464e-b8b2-7b0d01afdefa"
+        },
+        {
+          "date": "29/10/2025",
+          "recaudado": 810,
+          "costoPeluches": 800,
+          "id": "5cb22f33-7dd3-46df-9fcf-dcd3b4174b10"
+        },
+        {
+          "date": "01/11/2025",
+          "recaudado": 570,
+          "costoPeluches": 400,
+          "id": "ad8b7185-ba7f-4a61-8c35-fb2f7886631b"
+        },
+        {
+          "date": "05/11/2025",
+          "recaudado": 445,
+          "costoPeluches": 200,
+          "id": "544c88b7-a07c-4d05-bb60-e6fbe6b2499d"
+        },
+        {
+          "date": "11/11/2025",
+          "recaudado": 670,
+          "costoPeluches": 150,
+          "id": "cd069ce2-bfdb-415c-aaaf-c6f4f2f5270e"
+        },
+        {
+          "date": "16/11/2025",
+          "recaudado": 600,
+          "costoPeluches": 350,
+          "id": "665b266b-ecf0-49a3-b1c3-abefd23ba1ab"
+        },
+        {
+          "date": "22/11/2025",
+          "recaudado": 550,
+          "costoPeluches": 300,
+          "id": "1d7a7f41-6d3c-4359-ba5c-a5429a63d0eb"
+        },
+        {
+          "date": "26/11/2025",
+          "recaudado": 940,
+          "costoPeluches": 250,
+          "id": "865aeb67-828a-4cb8-87f3-f4545fa7e34c"
+        },
+        {
+          "date": "02/12/2025",
+          "recaudado": 230,
+          "costoPeluches": 100,
+          "id": "9c7b9443-bc98-4e2e-a23a-64494564bc99"
+        },
+        {
+          "date": "05/12/2025",
+          "recaudado": 130,
+          "costoPeluches": 100,
+          "id": "e731ed2c-79aa-4322-b8f7-daa73decdec8"
+        },
+        {
+          "date": "07/12/2025",
+          "recaudado": 250,
+          "costoPeluches": 100,
+          "id": "4f4385f9-f173-4154-9fd2-a7cb682b6293"
+        },
+        {
+          "date": "18/12/2025",
+          "recaudado": 370,
+          "costoPeluches": 150,
+          "id": "d7dc4e43-2e5e-4aa4-87f5-f5a24e76f9c9"
+        },
+        {
+          "date": "08/01/2026",
+          "recaudado": 1010,
+          "costoPeluches": 350,
+          "id": "2b34723c-e83a-4579-ae24-95a9f8539612"
+        },
+        {
+          "date": "20/01/2026",
+          "recaudado": 355,
+          "costoPeluches": 70,
+          "id": "d4f62134-ac59-4ef4-b3d6-5d72b73b5994"
+        },
+        {
+          "date": "30/01/2026",
+          "recaudado": 830,
+          "costoPeluches": 275,
+          "id": "b4799d47-7ea8-4026-89d3-96b7d3b26682"
+        },
+        {
+          "date": "05/02/2026",
+          "recaudado": 320,
+          "costoPeluches": 70,
+          "id": "3f8da6cf-cd89-4334-ab3e-64ab6a863049"
+        },
+        {
+          "date": "14/02/2026",
+          "recaudado": 240,
+          "costoPeluches": 100,
+          "id": "6cabb89f-9a0b-4902-a6b3-684f34e1e411"
+        },
+        {
+          "date": "22/02/2026",
+          "recaudado": 130,
+          "costoPeluches": 0,
+          "id": "ceecd9e3-b503-4ca9-bb41-1919dbdc30a8"
+        },
+        {
+          "date": "01/03/2026",
+          "recaudado": 290,
+          "costoPeluches": 70,
+          "id": "36676ac5-a305-4aa4-afad-e26446614a77"
+        },
+        {
+          "date": "16/03/2026",
+          "recaudado": 200,
+          "costoPeluches": 0,
+          "id": "dc8187aa-1d12-4056-8f37-85450faf3a18"
+        },
+        {
+          "date": "02/04/2026",
+          "recaudado": 505,
+          "costoPeluches": 300,
+          "id": "3662e997-6b0d-4ce4-94c0-db6103c907b7"
+        },
+        {
+          "date": "15/04/2026",
+          "recaudado": 260,
+          "costoPeluches": 50,
+          "id": "9ff70383-1d8d-45a8-a61a-bec3f73d4e83"
+        }
+      ]
+    },
+    {
+      "name": "Time Vault",
+      "commissionPercent": 20,
+      "id": "71ddf280-e125-4bc4-86b1-b8fae99ccbee",
+      "entries": [
+        {
+          "date": "05/12/2025",
+          "recaudado": 860,
+          "costoPeluches": 300,
+          "id": "7803a517-a68a-4054-ad11-356072c92287"
+        },
+        {
+          "date": "05/12/2025",
+          "recaudado": 770,
+          "costoPeluches": 50,
+          "id": "9a91b246-6c4c-4c89-b1e7-1a20468abeb5"
+        },
+        {
+          "date": "07/12/2025",
+          "recaudado": 480,
+          "costoPeluches": 200,
+          "id": "920024c4-bd9a-4b0b-825f-19d3e98a7c4b"
+        },
+        {
+          "date": "18/12/2025",
+          "recaudado": 560,
+          "costoPeluches": 150,
+          "id": "5b2067ed-22c5-4eac-86c4-d6d7ce22e3d0"
+        },
+        {
+          "date": "23/12/2025",
+          "recaudado": 480,
+          "costoPeluches": 300,
+          "id": "bcbff88d-b6be-469b-8c3f-20f0351a34e1"
+        },
+        {
+          "date": "05/01/2026",
+          "recaudado": 400,
+          "costoPeluches": 150,
+          "id": "6048cd05-3f81-4b2a-9ee0-7ca3a320f6c1"
+        },
+        {
+          "date": "11/01/2026",
+          "recaudado": 350,
+          "costoPeluches": 100,
+          "id": "2780f63c-57e3-4c24-8d6c-983a76fe99b9"
+        },
+        {
+          "date": "18/01/2026",
+          "recaudado": 540,
+          "costoPeluches": 0,
+          "id": "c109201b-fc7f-4bbf-a675-16e46f68395b"
+        },
+        {
+          "date": "30/01/2026",
+          "recaudado": 840,
+          "costoPeluches": 240,
+          "id": "86aa1863-0cdd-40b3-a288-48e298d5d406"
+        },
+        {
+          "date": "05/02/2026",
+          "recaudado": 627,
+          "costoPeluches": 85,
+          "id": "1c19954e-8d1c-4656-99c5-55205b7045af"
+        },
+        {
+          "date": "14/02/2026",
+          "recaudado": 850,
+          "costoPeluches": 150,
+          "id": "a394b38b-ba42-48f2-9b3d-226633ca0432"
+        },
+        {
+          "date": "22/02/2026",
+          "recaudado": 485,
+          "costoPeluches": 70,
+          "id": "104d4a48-4033-4422-bfbc-bbc846163001"
+        },
+        {
+          "date": "01/03/2026",
+          "recaudado": 670,
+          "costoPeluches": 70,
+          "id": "1ea1103e-3d92-413e-aaa2-8225891f0801"
+        },
+        {
+          "date": "08/03/2026",
+          "recaudado": 500,
+          "costoPeluches": 150,
+          "id": "a997d52f-2a33-435d-a73c-c4c634660b3e"
+        },
+        {
+          "date": "16/03/2026",
+          "recaudado": 300,
+          "costoPeluches": 70,
+          "id": "b6bcff56-24de-429d-b1ca-1f1e2e3a1af1"
+        },
+        {
+          "date": "01/04/2026",
+          "recaudado": 1030,
+          "costoPeluches": 420,
+          "id": "74044116-14b2-4a51-8e03-1ab07a8bd6e5"
+        },
+        {
+          "date": "15/04/2026",
+          "recaudado": 430,
+          "costoPeluches": 70,
+          "id": "20f515a0-d343-4b01-88a3-500d261599e3"
         }
       ]
     }
